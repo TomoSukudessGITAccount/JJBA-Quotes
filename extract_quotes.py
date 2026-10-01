@@ -1,275 +1,171 @@
 import csv
-import html
 import re
+import sys
 import requests
+from bs4 import BeautifulSoup
+from urllib.parse import quote
 
-API = "https://jojowiki.com/api.php"
 OUTPUT = "jojo quotes.csv"
 
-# ============================================================
-# CONFIGURAÇÃO
-# Coloque aqui os personagens que você quer no Bonjourr.
-# ============================================================
-
+# (Nome que aparecerá no CSV, página da JoJoWiki)
 CHARACTERS = [
-    "Jonathan Joestar",
-    "Joseph Joestar",
-    "Jotaro Kujo",
-    "Josuke Higashikata",
-    "Giorno Giovanna",
-    "Jolyne Cujoh",
+    ("Jonathan Joestar", "Jonathan Joestar"),
+    ("Joseph Joestar", "Joseph Joestar"),
+    ("Jotaro Kujo", "Jotaro Cujoh"),
+    ("Josuke Higashikata", "Josuke Higashikata"),
+    ("Giorno Giovanna", "Giorno Giovanna"),
+    ("Jolyne Cujoh", "Jolyne Cujoh"),
 
-    "Dio Brando",
-    "DIO",
-    "Enrico Pucci",
+    ("Dio Brando", "Dio Brando"),
+    ("DIO", "DIO"),
+    ("Enrico Pucci", "Enrico Pucci"),
 
-    "Robert E. O. Speedwagon",
-    "Caesar Anthonio Zeppeli",
-    "Jean Pierre Polnareff",
-    "Okuyasu Nijimura",
-    "Bruno Bucciarati",
-    "Pannacotta Fugo",
-    "Ermes Costello",
+    ("Robert E. O. Speedwagon", "Robert E. O. Speedwagon"),
+    ("Caesar Anthonio Zeppeli", "Caesar Anthonio Zeppeli"),
+    ("Jean Pierre Polnareff", "Jean Pierre Polnareff"),
+    ("Okuyasu Nijimura", "Okuyasu Nijimura"),
+    ("Bruno Bucciarati", "Bruno Bucciarati"),
+    ("Pannacotta Fugo", "Pannacotta Fugo"),
+    ("Ermes Costello", "Ermes Costello"),
 
-    # Quando quiser entrar em SBR:
-    # "Johnny Joestar",
-    # "Gyro Zeppeli",
-    # "Diego Brando",
+    # Steel Ball Run, quando quiser:
+    # ("Johnny Joestar", "Johnny Joestar"),
+    # ("Gyro Zeppeli", "Gyro Zeppeli"),
+    # ("Diego Brando", "Diego Brando"),
 ]
 
+HEADERS = {
+    "User-Agent": (
+        "TomoSuku-JoJoQuotes/2.0 "
+        "(personal Bonjourr quote dataset)"
+    )
+}
 
-def get_wikitext(page):
-    """Obtém o código-fonte MediaWiki de uma página."""
 
-    params = {
-        "action": "query",
-        "format": "json",
-        "formatversion": "2",
-        "prop": "revisions",
-        "rvprop": "content",
-        "rvslots": "main",
-        "titles": page,
-    }
+def get_soup(page):
+    """Baixa a página renderizada da JoJoWiki."""
+
+    page_url = page.replace(" ", "_")
+
+    url = (
+        "https://jojowiki.com/"
+        + quote(page_url, safe="_()'-")
+    )
 
     response = requests.get(
-        API,
-        params=params,
-        timeout=30,
-        headers={
-            "User-Agent": "TomoSuku-JoJoQuotes/1.0"
-        },
+        url,
+        headers=HEADERS,
+        timeout=30
     )
 
     response.raise_for_status()
 
-    data = response.json()
-    pages = data["query"]["pages"]
-
-    if not pages or pages[0].get("missing"):
-        print(f"⚠ Página não encontrada: {page}")
-        return None
-
-    return pages[0]["revisions"][0]["slots"]["main"]["content"]
+    return BeautifulSoup(response.text, "html.parser")
 
 
-def find_templates(text, template_names=("Q", "Quote")):
+def find_quotes_section(soup):
     """
-    Procura templates MediaWiki respeitando templates aninhados.
+    Procura o H2 da seção Quotes.
 
-    Exemplo:
-    {{Q|{{Nihongo|Hello|こんにちは}}|{{Ch|Chapter 1}}}}
+    Também aceita 'Frases', caso futuramente seja usada
+    uma página em português.
     """
 
-    results = []
-    lower = text.lower()
+    for heading in soup.find_all(["h2", "h3"]):
 
-    i = 0
+        text = heading.get_text(
+            " ",
+            strip=True
+        ).lower()
 
-    while i < len(text):
+        # Remove coisas como [edit]
+        text = re.sub(
+            r"\[.*?\]",
+            "",
+            text
+        ).strip()
 
-        matched = None
+        if text in {
+            "quotes",
+            "frases",
+            "citations",
+            "zitate"
+        }:
+            return heading
 
-        for name in template_names:
-            marker = "{{" + name.lower()
-
-            if lower.startswith(marker, i):
-                after = i + len(marker)
-
-                # Evita capturar coisas como {{QuoteBox}}
-                if after < len(text) and text[after] not in "| \n}":
-                    continue
-
-                matched = name
-                break
-
-        if not matched:
-            i += 1
-            continue
-
-        start = i
-        depth = 0
-        j = i
-
-        while j < len(text) - 1:
-
-            if text[j:j+2] == "{{":
-                depth += 1
-                j += 2
-                continue
-
-            if text[j:j+2] == "}}":
-                depth -= 1
-                j += 2
-
-                if depth == 0:
-                    results.append(text[start:j])
-                    i = j
-                    break
-
-                continue
-
-            j += 1
-
-        else:
-            i += 1
-
-    return results
+    return None
 
 
-def split_template_parameters(template):
-    """
-    Divide parâmetros apenas quando | está no nível principal.
+def clean_quote(text):
+    """Limpa espaços e alguns caracteres estranhos."""
 
-    Assim:
-    {{Q|{{Nihongo|Hello|こんにちは}}|{{Ch|Chapter 1}}}}
-
-    não quebra o Nihongo no meio.
-    """
-
-    inner = template[2:-2]
-
-    first_pipe = inner.find("|")
-
-    if first_pipe == -1:
-        return []
-
-    content = inner[first_pipe + 1:]
-
-    parameters = []
-    current = []
-    depth = 0
-
-    i = 0
-
-    while i < len(content):
-
-        if content[i:i+2] == "{{":
-            depth += 1
-            current.append("{{")
-            i += 2
-            continue
-
-        if content[i:i+2] == "}}":
-            depth -= 1
-            current.append("}}")
-            i += 2
-            continue
-
-        if content[i] == "|" and depth == 0:
-            parameters.append("".join(current))
-            current = []
-        else:
-            current.append(content[i])
-
-        i += 1
-
-    parameters.append("".join(current))
-
-    return parameters
-
-
-def clean_wikitext(text):
-    """Transforma markup MediaWiki em texto normal."""
-
-    # --------------------------------------------------------
-    # Nihongo:
-    # {{Nihongo|English text|Japanese|Romanization}}
-    #
-    # Mantemos apenas o primeiro parâmetro.
-    # --------------------------------------------------------
-
-    nihongo_pattern = re.compile(
-        r"\{\{(?:Nihongo|nihongo|Nihongo2)"
-        r"\|([^{}|]*(?:\{\{.*?\}\}[^{}|]*)?)"
-        r"(?:\|.*?)?\}\}",
-        flags=re.DOTALL,
-    )
-
-    previous = None
-
-    while previous != text:
-        previous = text
-        text = nihongo_pattern.sub(r"\1", text)
-
-    # --------------------------------------------------------
-    # Links:
-    #
-    # [[Jotaro Kujo]]       -> Jotaro Kujo
-    # [[DIO|Dio]]           -> Dio
-    # --------------------------------------------------------
+    text = text.replace("\xa0", " ")
 
     text = re.sub(
-        r"\[\[(?:[^\]|]+\|)?([^\]]+)\]\]",
-        r"\1",
+        r"\s+",
+        " ",
         text
     )
 
-    # --------------------------------------------------------
-    # HTML
-    # --------------------------------------------------------
-
-    text = re.sub(r"<br\s*/?>", " ", text, flags=re.I)
-    text = re.sub(r"<ref[^>]*>.*?</ref>", "", text, flags=re.DOTALL)
-    text = re.sub(r"<[^>]+>", "", text)
-
-    # --------------------------------------------------------
-    # Formatação Wiki
-    # --------------------------------------------------------
-
-    text = text.replace("'''", "")
-    text = text.replace("''", "")
-
-    # Remove templates restantes
-    text = re.sub(r"\{\{[^{}]*\}\}", "", text)
-
-    # Decodifica &quot;, &amp;, etc.
-    text = html.unescape(text)
-
-    # Espaços
-    text = re.sub(r"\s+", " ", text)
-
-    return text.strip()
+    return text.strip(
+        " \n\t“”\""
+    )
 
 
-def extract_quotes(wikitext):
+def extract_quotes(soup):
+    """Extrai os blockquotes da seção Quotes."""
+
+    heading = find_quotes_section(soup)
+
+    if not heading:
+        return []
+
     quotes = []
+    seen_blocks = set()
 
-    templates = find_templates(wikitext)
+    # Anda pelo HTML depois do título Quotes.
+    for element in heading.find_all_next():
 
-    for template in templates:
+        # Chegamos à próxima seção principal.
+        if (
+            element.name == "h2"
+            and element is not heading
+        ):
+            break
 
-        params = split_template_parameters(template)
-
-        if not params:
+        if element.name != "blockquote":
             continue
 
-        quote = clean_wikitext(params[0])
+        # Evita processar o mesmo bloco mais de uma vez.
+        block_id = id(element)
 
-        # Ignora lixo ou frases absurdamente pequenas
-        if len(quote) < 4:
+        if block_id in seen_blocks:
             continue
 
-        quotes.append(quote)
+        seen_blocks.add(block_id)
+
+        # Normalmente a frase está dentro do primeiro <p>.
+        paragraph = element.find("p")
+
+        if paragraph:
+            text = paragraph.get_text(
+                " ",
+                strip=True
+            )
+        else:
+            # Fallback
+            text = element.get_text(
+                " ",
+                strip=True
+            )
+
+        text = clean_quote(text)
+
+        # Ignora blocos vazios ou quase vazios.
+        if len(text) < 4:
+            continue
+
+        quotes.append(text)
 
     return quotes
 
@@ -279,45 +175,56 @@ def main():
     collected = []
     seen = set()
 
-    print("=== JoJoWiki Quote Extractor ===\n")
+    print()
+    print("=== JoJoWiki Quote Extractor v2 ===")
+    print()
 
-    for character in CHARACTERS:
+    for author, page in CHARACTERS:
 
-        print(f"🔎 {character}")
+        print(f"🔎 {author}")
 
         try:
-            text = get_wikitext(character)
 
-            if not text:
-                continue
+            soup = get_soup(page)
 
-            quotes = extract_quotes(text)
+            quotes = extract_quotes(soup)
 
-            print(f"   → {len(quotes)} quotes encontradas")
+            print(
+                f"   → {len(quotes)} quotes encontradas"
+            )
 
-            for quote in quotes:
+            for quote_text in quotes:
 
-                # Normalização para detectar duplicatas
-                key = (
-                    character.lower(),
-                    quote.lower()
-                )
+                key = quote_text.casefold()
 
+                # Remove duplicatas globais.
                 if key in seen:
                     continue
 
                 seen.add(key)
 
                 collected.append(
-                    (character, quote)
+                    (author, quote_text)
                 )
 
         except Exception as error:
-            print(f"   ❌ Erro: {error}")
 
-    # --------------------------------------------------------
-    # CSV
-    # --------------------------------------------------------
+            print(
+                f"   ❌ Erro: {error}"
+            )
+
+    print()
+
+    # MUITO IMPORTANTE:
+    # se algo quebrar novamente, NÃO apaga seu CSV.
+    if not collected:
+
+        print("❌ Nenhuma quote foi encontrada.")
+        print(
+            "O CSV antigo NÃO será sobrescrito."
+        )
+
+        sys.exit(1)
 
     with open(
         OUTPUT,
@@ -331,16 +238,20 @@ def main():
             quoting=csv.QUOTE_ALL
         )
 
-        for author, quote in collected:
+        for author, quote_text in collected:
+
             writer.writerow([
                 author,
-                quote
+                quote_text
             ])
 
-    print()
     print("==============================")
-    print(f"✨ {len(collected)} quotes salvas")
-    print(f"📄 Arquivo: {OUTPUT}")
+    print(
+        f"✨ {len(collected)} quotes salvas"
+    )
+    print(
+        f"📄 {OUTPUT}"
+    )
     print("==============================")
 
 
