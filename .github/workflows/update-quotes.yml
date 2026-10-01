@@ -1,0 +1,45 @@
+name: Update JoJo Quotes
+
+on:
+  # Permite executar manualmente pela aba Actions
+  workflow_dispatch:
+
+  # Também atualiza automaticamente uma vez por semana
+  schedule:
+    - cron: "0 12 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+  update-quotes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Buscar quotes da JoJoWiki
+        run: python extract_quotes.py
+
+      - name: Salvar quotes atualizadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add "jojo quotes.csv"
+
+          if git diff --cached --quiet; then
+            echo "Nenhuma mudança encontrada."
+          else
+            git commit -m "Update JoJo quotes"
+            git push
+          fi
