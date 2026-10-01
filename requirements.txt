@@ -1,0 +1,5 @@
+Requirements to this thing take quotes and speeches.
+1. Python (obviously lol)
+2. Exists and Breath
+3. install Pip Requests
+4. Run the main code!
