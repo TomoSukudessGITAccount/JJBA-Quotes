@@ -1,233 +1,352 @@
 import csv
+import html
 import re
-import sys
-import requests
-from bs4 import BeautifulSoup
-from urllib.parse import quote
-
-OUTPUT = "jojo quotes.csv"
-
-# (Nome que aparecerá no CSV, página da JoJoWiki)
-CHARACTERS = [
-    ("Jonathan Joestar", "Jonathan Joestar"),
-    ("Joseph Joestar", "Joseph Joestar"),
-    ("Jotaro Kujo", "Jotaro Cujoh"),
-    ("Josuke Higashikata", "Josuke Higashikata"),
-    ("Giorno Giovanna", "Giorno Giovanna"),
-    ("Jolyne Cujoh", "Jolyne Cujoh"),
-
-    ("Dio Brando", "Dio Brando"),
-    ("DIO", "DIO"),
-    ("Enrico Pucci", "Enrico Pucci"),
-
-    ("Robert E. O. Speedwagon", "Robert E. O. Speedwagon"),
-    ("Caesar Anthonio Zeppeli", "Caesar Anthonio Zeppeli"),
-    ("Jean Pierre Polnareff", "Jean Pierre Polnareff"),
-    ("Okuyasu Nijimura", "Okuyasu Nijimura"),
-    ("Bruno Bucciarati", "Bruno Bucciarati"),
-    ("Pannacotta Fugo", "Pannacotta Fugo"),
-    ("Ermes Costello", "Ermes Costello"),
-
-    # Steel Ball Run, quando quiser:
-    # ("Johnny Joestar", "Johnny Joestar"),
-    # ("Gyro Zeppeli", "Gyro Zeppeli"),
-    # ("Diego Brando", "Diego Brando"),
-]
-
-HEADERS = {
-    "User-Agent": (
-        "TomoSuku-JoJoQuotes/2.0 "
-        "(personal Bonjourr quote dataset)"
-    )
-}
+from pathlib import Path
 
 
-def get_soup(page):
-    """Baixa a página renderizada da JoJoWiki."""
-
-    page_url = page.replace(" ", "_")
-
-    url = (
-        "https://jojowiki.com/"
-        + quote(page_url, safe="_()'-")
-    )
-
-    response = requests.get(
-        url,
-        headers=HEADERS,
-        timeout=30
-    )
-
-    response.raise_for_status()
-
-    return BeautifulSoup(response.text, "html.parser")
+SOURCES_DIR = Path("sources")
+OUTPUT_FILE = Path("jojo quotes.csv")
 
 
-def find_quotes_section(soup):
+def find_q_templates(text):
     """
-    Procura o H2 da seção Quotes.
-
-    Também aceita 'Frases', caso futuramente seja usada
-    uma página em português.
+    Encontra todos os templates {{Q|...}}
+    respeitando templates aninhados.
     """
 
-    for heading in soup.find_all(["h2", "h3"]):
+    templates = []
+    i = 0
 
-        text = heading.get_text(
-            " ",
-            strip=True
-        ).lower()
+    while i < len(text) - 1:
 
-        # Remove coisas como [edit]
+        if not text.startswith("{{Q|", i):
+            i += 1
+            continue
+
+        start = i
+        depth = 0
+        j = i
+
+        while j < len(text) - 1:
+
+            if text.startswith("{{", j):
+                depth += 1
+                j += 2
+                continue
+
+            if text.startswith("}}", j):
+                depth -= 1
+                j += 2
+
+                if depth == 0:
+                    templates.append(text[start:j])
+                    i = j
+                    break
+
+                continue
+
+            j += 1
+
+        else:
+            i += 1
+
+    return templates
+
+
+def split_template_parameters(template):
+    """
+    Divide:
+
+    {{Q|QUOTE|AUTOR|FONTE}}
+
+    sem quebrar coisas internas como:
+
+    {{Ch|Chapter 456}}
+    [[Giorno Giovanna|GioGio]]
+    """
+
+    # Remove "{{Q|" do começo e "}}" do final
+    content = template[4:-2]
+
+    parts = []
+    current = []
+
+    template_depth = 0
+    link_depth = 0
+
+    i = 0
+
+    while i < len(content):
+
+        if content.startswith("{{", i):
+            template_depth += 1
+            current.append("{{")
+            i += 2
+            continue
+
+        if content.startswith("}}", i):
+            template_depth -= 1
+            current.append("}}")
+            i += 2
+            continue
+
+        if content.startswith("[[", i):
+            link_depth += 1
+            current.append("[[")
+            i += 2
+            continue
+
+        if content.startswith("]]", i):
+            link_depth -= 1
+            current.append("]]")
+            i += 2
+            continue
+
+        if (
+            content[i] == "|"
+            and template_depth == 0
+            and link_depth == 0
+        ):
+            parts.append("".join(current))
+            current = []
+            i += 1
+            continue
+
+        current.append(content[i])
+        i += 1
+
+    parts.append("".join(current))
+
+    return parts
+
+
+def clean_wikilinks(text):
+    """
+    Converte:
+
+    [[Giorno Giovanna|GioGio]]
+        ↓
+    GioGio
+
+    [[Purple Haze]]
+        ↓
+    Purple Haze
+    """
+
+    def replace_link(match):
+
+        content = match.group(1)
+
+        if "|" in content:
+            return content.split("|")[-1]
+
+        return content
+
+    return re.sub(
+        r"\[\[([^\]]+)\]\]",
+        replace_link,
+        text
+    )
+
+
+def clean_templates(text):
+    """
+    Remove templates restantes que eventualmente
+    apareçam dentro da própria frase.
+    """
+
+    previous = None
+
+    while previous != text:
+
+        previous = text
+
         text = re.sub(
-            r"\[.*?\]",
+            r"\{\{[^{}]*\}\}",
             "",
             text
-        ).strip()
+        )
 
-        if text in {
-            "quotes",
-            "frases",
-            "citations",
-            "zitate"
-        }:
-            return heading
-
-    return None
+    return text
 
 
-def clean_quote(text):
-    """Limpa espaços e alguns caracteres estranhos."""
+def clean_text(text):
 
-    text = text.replace("\xa0", " ")
+    text = clean_wikilinks(text)
+    text = clean_templates(text)
 
+    # Formatação wiki
+    text = text.replace("'''", "")
+    text = text.replace("''", "")
+
+    # HTML entities
+    text = html.unescape(text)
+
+    # HTML simples
+    text = re.sub(
+        r"<br\s*/?>",
+        " ",
+        text,
+        flags=re.IGNORECASE
+    )
+
+    text = re.sub(
+        r"<[^>]+>",
+        "",
+        text
+    )
+
+    # Normaliza espaços
     text = re.sub(
         r"\s+",
         " ",
         text
     )
 
-    return text.strip(
-        " \n\t“”\""
-    )
+    return text.strip()
 
 
-def extract_quotes(soup):
-    """Extrai os blockquotes da seção Quotes."""
+def normalize_author(author):
+    """
+    Remove descrições editoriais simples do campo autor.
 
-    heading = find_quotes_section(soup)
+    Exemplo real:
+    'Pannacotta Fugo seething'
+        ↓
+    'Pannacotta Fugo'
 
-    if not heading:
-        return []
+    Podemos expandir esta lista depois.
+    """
 
-    quotes = []
-    seen_blocks = set()
+    author = clean_text(author)
 
-    # Anda pelo HTML depois do título Quotes.
-    for element in heading.find_all_next():
+    suffixes = [
+        " seething",
+        " yelling",
+        " shouting",
+        " thinking",
+        " screaming",
+        " crying",
+    ]
 
-        # Chegamos à próxima seção principal.
-        if (
-            element.name == "h2"
-            and element is not heading
-        ):
+    lower = author.lower()
+
+    for suffix in suffixes:
+
+        if lower.endswith(suffix):
+
+            author = author[
+                :len(author) - len(suffix)
+            ]
+
             break
 
-        if element.name != "blockquote":
+    return author.strip()
+
+
+def parse_source_file(path):
+
+    text = path.read_text(
+        encoding="utf-8"
+    )
+
+    quotes = []
+
+    templates = find_q_templates(text)
+
+    for template in templates:
+
+        parameters = split_template_parameters(
+            template
+        )
+
+        # Precisamos pelo menos:
+        # quote + autor
+        if len(parameters) < 2:
             continue
 
-        # Evita processar o mesmo bloco mais de uma vez.
-        block_id = id(element)
+        quote_text = clean_text(
+            parameters[0]
+        )
 
-        if block_id in seen_blocks:
+        author = normalize_author(
+            parameters[1]
+        )
+
+        if not quote_text:
             continue
 
-        seen_blocks.add(block_id)
-
-        # Normalmente a frase está dentro do primeiro <p>.
-        paragraph = element.find("p")
-
-        if paragraph:
-            text = paragraph.get_text(
-                " ",
-                strip=True
-            )
-        else:
-            # Fallback
-            text = element.get_text(
-                " ",
-                strip=True
-            )
-
-        text = clean_quote(text)
-
-        # Ignora blocos vazios ou quase vazios.
-        if len(text) < 4:
+        if not author:
             continue
 
-        quotes.append(text)
+        quotes.append(
+            (author, quote_text)
+        )
 
     return quotes
 
 
 def main():
 
-    collected = []
-    seen = set()
-
     print()
-    print("=== JoJoWiki Quote Extractor v2 ===")
+    print("=== JoJo Quote Converter ===")
     print()
 
-    for author, page in CHARACTERS:
+    if not SOURCES_DIR.exists():
 
-        print(f"🔎 {author}")
-
-        try:
-
-            soup = get_soup(page)
-
-            quotes = extract_quotes(soup)
-
-            print(
-                f"   → {len(quotes)} quotes encontradas"
-            )
-
-            for quote_text in quotes:
-
-                key = quote_text.casefold()
-
-                # Remove duplicatas globais.
-                if key in seen:
-                    continue
-
-                seen.add(key)
-
-                collected.append(
-                    (author, quote_text)
-                )
-
-        except Exception as error:
-
-            print(
-                f"   ❌ Erro: {error}"
-            )
-
-    print()
-
-    # MUITO IMPORTANTE:
-    # se algo quebrar novamente, NÃO apaga seu CSV.
-    if not collected:
-
-        print("❌ Nenhuma quote foi encontrada.")
         print(
-            "O CSV antigo NÃO será sobrescrito."
+            "❌ Pasta 'sources' não encontrada."
         )
 
-        sys.exit(1)
+        return
 
-    with open(
-        OUTPUT,
+    all_quotes = []
+    seen = set()
+
+    files = sorted(
+        SOURCES_DIR.rglob("*.txt")
+    )
+
+    print(
+        f"📁 {len(files)} arquivos encontrados."
+    )
+    print()
+
+    for path in files:
+
+        quotes = parse_source_file(path)
+
+        print(
+            f"🔎 {path}: "
+            f"{len(quotes)} quotes"
+        )
+
+        for author, quote_text in quotes:
+
+            key = (
+                author.casefold(),
+                quote_text.casefold()
+            )
+
+            if key in seen:
+                continue
+
+            seen.add(key)
+
+            all_quotes.append(
+                (author, quote_text)
+            )
+
+    if not all_quotes:
+
+        print()
+        print(
+            "❌ Nenhuma quote encontrada."
+        )
+
+        return
+
+    with OUTPUT_FILE.open(
         "w",
         newline="",
         encoding="utf-8"
@@ -238,19 +357,19 @@ def main():
             quoting=csv.QUOTE_ALL
         )
 
-        for author, quote_text in collected:
+        for author, quote_text in all_quotes:
 
-            writer.writerow([
-                author,
-                quote_text
-            ])
+            writer.writerow(
+                [author, quote_text]
+            )
 
+    print()
     print("==============================")
     print(
-        f"✨ {len(collected)} quotes salvas"
+        f"✨ {len(all_quotes)} quotes salvas"
     )
     print(
-        f"📄 {OUTPUT}"
+        f"📄 {OUTPUT_FILE}"
     )
     print("==============================")
 
