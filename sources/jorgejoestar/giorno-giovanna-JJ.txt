@@ -1,10 +1,29 @@
 ==Quotes==
 {{Quotes|bg=Jorge|bg2=Jorge2
 |{{Q|[[Jorge Joestar (First Universe)|George Joestar]], I apologize for my men's manners.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
-|{{Q|{{JJ|Enrico Pucci|t=2|You}} don't get it. You aren't here to finish me off. I'll be finishing you. You're the one God has forsaken. This was always the plan, poor priest. If only you had never realized how you've been used, you might have been happy to the bitter end. But I am the son of a God who is both kind and cruel, and I must act accordingly.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
-|{{Q|{{JJ|Enrico Pucci|t=2|You}} are a half-formed man, driven by fruitless desire. A narrow-minded man, unable to accept anything but your own ideals. A self-absorbed low-life who has the gall to try to bask in God's love. So vain you'll do anything for a modest scrap of praise, and for a fleeting moment's emotion you'll act as if you've risen to Heaven and activate your bizarre power. He had a use for that power. But that use has been and gone. If you were but a little more rational, he might have allowed you to remain by his side, useful or not. But in the end, you are a man of no experience, incapable of deeper thought, incapable of seeing the big picture, a fool dancing at the whims of your betters. Since he saw no value in keeping you around, he has tossed you aside like yesterday's trash. Are you prepared?|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
-|{{Q|Heaven's not waiting for you, [[Enrico Pucci (JORGE JOESTAR)|Enrico Pucci]]! But you're such a coward you'd just speed up time in Hell to get through it! You'll get the fate you deserve – I'll trap you in the same loop you trapped [[Diavolo (JORGE JOESTAR)|Diavolo]] and {{JJ|Yoshikage Kira|t=2}} in when you killed them!|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
-|{{Q|If you feel sympathy for him, don't bother. This is the fate [[Enrico Pucci (JORGE JOESTAR)|he]] deserved, and at the same time, a blessing. Since this is a punishment direct from God. It is quite simple to interpret endless punishment as endless love.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|{{JJ|Enrico Pucci|t=2|You}} don't get it. You aren't here to finish me off. I'll be finishing you. You're the one God has forsaken.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|{{JJ|Enrico Pucci|t=2|You}} are a half-formed man, driven by fruitless desire.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|Heaven's not waiting for you, [[Enrico Pucci (JORGE JOESTAR)|Enrico Pucci]]! But you're such a coward|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|If you feel sympathy for him, don't bother. This is the fate [[Enrico Pucci (JORGE JOESTAR)|he]] deserved|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
 |{{Q|I'm telling the truth! I've been betrayed by God!|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
-|{{Q|I canceled my own death, survived in a place between life and death until I arrived here. I followed [[Dio Brando|you]] here, to this far off universe, and waited. So I could be useful to you, father. So I could become you.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|I canceled my own death, survived in a place between life and death until I arrived here.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|I followed [[Dio Brando|you]] here, to this far off universe, and waited.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|So I could become you.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|This was always the plan, poor priest.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|If only you had never realized how you've been used, you might have been happy to the bitter end.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|But I am the son of a God who is both kind and cruel, and I must act accordingly.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|A self-absorbed low-life who has the gall to try to bask in God's love.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|A narrow-minded man, unable to accept anything but your own ideals.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|So vain you'll do anything for a modest scrap of praise, and for a fleeting moment's emotion you'll act as if you've risen to Heaven and activate your bizarre power.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|He had a use for that power. But that use has been and gone.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|If you were but a little more rational, he might have allowed you to remain by his side, useful or not.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|But in the end, you are a man of no experience, incapable of deeper thought, incapable of seeing the big picture|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|a fool dancing at the whims of your betters.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|Since he saw no value in keeping you around, he has tossed you aside like yesterday's trash.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|Are you prepared?|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|you'd just speed up time in Hell to get through it! You'll get the fate you deserve|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|I'll trap you in the same loop you trapped [[Diavolo (JORGE JOESTAR)|Diavolo]] and {{JJ|Yoshikage Kira|t=2}} in when you killed them!|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|A blessing. Since this is a punishment direct from God.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|It is quite simple to interpret endless punishment as endless love.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
+|{{Q|So I could be useful to you, father.|Giorno Giovanna|{{Ch|JORGE JOESTAR Chapter 15}}}}
 }}
