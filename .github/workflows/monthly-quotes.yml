@@ -1,0 +1,54 @@
+name: Monthly JoJo Quotes
+
+on:
+
+  # Permite girar manualmente quando quiser
+  workflow_dispatch:
+
+  # Dia 1 de cada mês
+  # 12:00 UTC ≈ 09:00 horário de Brasília
+  schedule:
+    - cron: "0 12 1 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  monthly-rotation:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sortear quotes do mês
+        run: python monthly_rotation.py
+
+      - name: Mostrar seleção
+        run: |
+          echo "Quotes selecionadas:"
+          wc -l "jojo quotes.csv"
+
+          echo ""
+          cat "jojo quotes.csv"
+
+      - name: Publicar nova seleção mensal
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add "jojo quotes.csv"
+
+          if git diff --cached --quiet; then
+            echo "O sorteio gerou exatamente o mesmo arquivo."
+          else
+            git commit -m "Rotate monthly JoJo quotes"
+            git push
+          fi
