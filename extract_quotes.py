@@ -5,14 +5,11 @@ from pathlib import Path
 
 
 SOURCES_DIR = Path("sources")
-OUTPUT_FILE = Path("jojo quotes.csv")
+ALL_QUOTES_FILE = Path("jojo-quotes-all.csv")
 
 
 def find_q_templates(text):
-    """
-    Encontra todos os templates {{Q|...}}
-    respeitando templates aninhados.
-    """
+    """Encontra templates {{Q|...}} respeitando templates aninhados."""
 
     templates = []
     i = 0
@@ -55,17 +52,10 @@ def find_q_templates(text):
 
 def split_template_parameters(template):
     """
-    Divide:
-
-    {{Q|QUOTE|AUTOR|FONTE}}
-
-    sem quebrar coisas internas como:
-
-    {{Ch|Chapter 456}}
-    [[Giorno Giovanna|GioGio]]
+    Divide {{Q|QUOTE|AUTOR|FONTE}}
+    sem quebrar templates e wikilinks internos.
     """
 
-    # Remove "{{Q|" do começo e "}}" do final
     content = template[4:-2]
 
     parts = []
@@ -121,20 +111,8 @@ def split_template_parameters(template):
 
 
 def clean_wikilinks(text):
-    """
-    Converte:
-
-    [[Giorno Giovanna|GioGio]]
-        ↓
-    GioGio
-
-    [[Purple Haze]]
-        ↓
-    Purple Haze
-    """
 
     def replace_link(match):
-
         content = match.group(1)
 
         if "|" in content:
@@ -150,15 +128,10 @@ def clean_wikilinks(text):
 
 
 def clean_templates(text):
-    """
-    Remove templates restantes que eventualmente
-    apareçam dentro da própria frase.
-    """
 
     previous = None
 
     while previous != text:
-
         previous = text
 
         text = re.sub(
@@ -175,14 +148,11 @@ def clean_text(text):
     text = clean_wikilinks(text)
     text = clean_templates(text)
 
-    # Formatação wiki
     text = text.replace("'''", "")
     text = text.replace("''", "")
 
-    # HTML entities
     text = html.unescape(text)
 
-    # HTML simples
     text = re.sub(
         r"<br\s*/?>",
         " ",
@@ -196,7 +166,6 @@ def clean_text(text):
         text
     )
 
-    # Normaliza espaços
     text = re.sub(
         r"\s+",
         " ",
@@ -207,16 +176,6 @@ def clean_text(text):
 
 
 def normalize_author(author):
-    """
-    Remove descrições editoriais simples do campo autor.
-
-    Exemplo real:
-    'Pannacotta Fugo seething'
-        ↓
-    'Pannacotta Fugo'
-
-    Podemos expandir esta lista depois.
-    """
 
     author = clean_text(author)
 
@@ -252,16 +211,12 @@ def parse_source_file(path):
 
     quotes = []
 
-    templates = find_q_templates(text)
-
-    for template in templates:
+    for template in find_q_templates(text):
 
         parameters = split_template_parameters(
             template
         )
 
-        # Precisamos pelo menos:
-        # quote + autor
         if len(parameters) < 2:
             continue
 
@@ -273,10 +228,7 @@ def parse_source_file(path):
             parameters[1]
         )
 
-        if not quote_text:
-            continue
-
-        if not author:
+        if not quote_text or not author:
             continue
 
         quotes.append(
@@ -286,19 +238,7 @@ def parse_source_file(path):
     return quotes
 
 
-def main():
-
-    print()
-    print("=== JoJo Quote Converter ===")
-    print()
-
-    if not SOURCES_DIR.exists():
-
-        print(
-            "❌ Pasta 'sources' não encontrada."
-        )
-
-        return
+def load_all_quotes():
 
     all_quotes = []
     seen = set()
@@ -307,19 +247,9 @@ def main():
         SOURCES_DIR.rglob("*.txt")
     )
 
-    print(
-        f"📁 {len(files)} arquivos encontrados."
-    )
-    print()
-
     for path in files:
 
         quotes = parse_source_file(path)
-
-        print(
-            f"🔎 {path}: "
-            f"{len(quotes)} quotes"
-        )
 
         for author, quote_text in quotes:
 
@@ -337,16 +267,12 @@ def main():
                 (author, quote_text)
             )
 
-    if not all_quotes:
+    return files, all_quotes
 
-        print()
-        print(
-            "❌ Nenhuma quote encontrada."
-        )
 
-        return
+def write_csv(path, quotes):
 
-    with OUTPUT_FILE.open(
+    with path.open(
         "w",
         newline="",
         encoding="utf-8"
@@ -357,21 +283,53 @@ def main():
             quoting=csv.QUOTE_ALL
         )
 
-        for author, quote_text in all_quotes:
+        writer.writerows(quotes)
 
-            writer.writerow(
-                [author, quote_text]
-            )
+
+def main():
 
     print()
-    print("==============================")
+    print("=== JoJo Quote Database Builder ===")
+    print()
+
+    if not SOURCES_DIR.exists():
+        raise SystemExit(
+            "❌ Pasta sources/ não encontrada."
+        )
+
+    files, quotes = load_all_quotes()
+
     print(
-        f"✨ {len(all_quotes)} quotes salvas"
+        f"📁 {len(files)} arquivos de personagens"
+    )
+
+    for path in files:
+
+        amount = len(
+            parse_source_file(path)
+        )
+
+        print(
+            f"🔎 {path}: {amount} quotes"
+        )
+
+    if not quotes:
+        raise SystemExit(
+            "❌ Nenhuma quote encontrada."
+        )
+
+    write_csv(
+        ALL_QUOTES_FILE,
+        quotes
+    )
+
+    print()
+    print(
+        f"✨ {len(quotes)} quotes no acervo completo."
     )
     print(
-        f"📄 {OUTPUT_FILE}"
+        f"📄 {ALL_QUOTES_FILE}"
     )
-    print("==============================")
 
 
 if __name__ == "__main__":
