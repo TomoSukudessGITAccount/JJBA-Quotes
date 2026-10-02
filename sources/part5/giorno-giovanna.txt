@@ -1,38 +1,74 @@
 ==Quotes==
 {{Quotes|bg=VA|bg2=VA2
-|{{Q|Looking for a taxi? Yeah? A taxi? [[Koichi Hirose|You]] looking for one? A taxi? How about it? I'm calling it a day and heading home anyway, so I'll give you a good deal. I'll take you to the city for 8,000 yen. How about it?|Giorno Giovanna's first line|{{Ch|Chapter 440}}}}
+|{{Q|Looking for a taxi? Yeah? A taxi? You looking for one? A taxi?|Giorno Giovanna's first line|{{Ch|Chapter 440}}}}
 |{{Q|Of course, I'll go straight to the hotel!... However, only with your empty luggage.|Giorno Giovanna|{{Ch|Chapter 440}}}}
-|{{Q|{{Nihongo2|Ciao.|チャオ|Chao.}}|Giorno after robbing [[Koichi]]|{{Ch|Chapter 440}} }}
-|{{Q|Luca... please, don't make me say the same thing twice. When I have to repeat something that only needs to be said once, it means that the listener is unintelligent.|Giorno Giovanna|{{Ch|Chapter 441}}}}
-|{{Q|I told you to stop... this frog isn't necessarily obedient towards me... It's only trying to protect itself. It has its own life to protect... Any attack directed towards it will be reflected back, resulting in death.|Giorno Giovanna|{{Ch|Chapter 441}}}}
+|{{Q|Ciao!|Giorno after robbing [[Koichi]]|{{Ch|Chapter 440}} }}
+|{{Q|Luca... please, don't make me say the same thing twice.|Giorno Giovanna|{{Ch|Chapter 441}}}}
+|{{Q|I told you to stop... this frog isn't necessarily obedient towards me...|Giorno Giovanna|{{Ch|Chapter 441}}}}
 |{{Q|Making me repeat myself... it's useless. I hate it because it's useless, useless, useless...|Giorno Giovanna|{{Ch|Chapter 441}}}}
-|{{Q|You're someone who's prepared himself for conflict. If you are prepared to kill someone, then that must mean that, in turn, you're prepared for the danger and possibility of being killed yourself...|Giorno Giovanna|{{Ch|Chapter 446}}}}
-|{{Q|I had just announced that I wouldn't allow civilians to get involved... I apologize, that was a lie.|Giorno Giovanna|{{Ch|Chapter 446}}}}
-|{{Q|No. You won't try to kill me anymore. Because you'll become my ally. I'm planning on defeating your Boss and taking over this city. In order to get rid of gangsters who sell drugs to children... you have to become a gang member yourself.|Giorno Giovanna|{{Ch|Chapter 447}}}}
-|{{Q|{{Nihongo2|Yes...! To take control of this city, I have to enter into the organization that is currently in control and work my way up...! I'm going to become a Gang-star!|ええ……！この街を乗っ取るには街を支配する「組織」に入ってのし上がって行くしかなり。ぼくは『ギャング・スター』になります！|Ee...! Kono machi o nottoru ni wa machi o shihai suru 'soshiki' ni haitte noshiagatte iku shika nari. Boku wa 'gyangu sutā' ni narimasu!}}|Giorno Giovanna|{{Ch|Chapter 448}}}}
-|{{Q|{{Nihongo2|I, Giorno Giovanna, have a dream!|このジョルノ・ジョバァーナには夢がある。|Kono Joruno Jobāna ni wa yume ga aru.}}|v=Giorno Giovanna's Dream.wav|Giorno Giovanna|{{Ch|Chapter 452}}}}
+|{{Q|You're someone who's prepared himself for conflict|Giorno Giovanna|{{Ch|Chapter 446}}}}
+|{{Q|I had just announced that I wouldn't allow civilians to get involved...|Giorno Giovanna|{{Ch|Chapter 446}}}}
+|{{Q|No. You won't try to kill me anymore. Because you'll become my ally.|Giorno Giovanna|{{Ch|Chapter 447}}}}
+|{{Q|I'm going to become a Gang-star!|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|I, Giorno Giovanna, have a dream!|Giorno Giovanna|{{Ch|Chapter 452}}}}
 |{{Q|Even if Polpo is a capo in the organization that I'm intending to join, if he intends to get in the way of my dream... and if he's someone who kills innocent bystanders like that old man, as if his life was just trash to be tossed... I have to defeat him!|Giorno Giovanna|{{Ch|Chapter 452}}}}
 |{{Q|I, Giorno Giovanna, have a dream that I know is just.|Giorno Giovanna|{{Ch|Chapter 453}}}}
-|{{Q|You said there are two paths I could follow... but for you to have that many choices? Impossible! Mudamudamudamudamudamudamuda !!! Take your time and enjoy sunbathing! That's the singular path that you can follow.|Giorno Giovanna|{{Ch|Chapter 454}}}}
-|{{Q|So. You asserted that when someone is insulted, murder is permitted, correct? I see, that is in fact a very important distinction. Because you insulted that innocent old man's life. And that's why I turned one of your pistols into a banana. It's your last meal; take your time... enjoy it.|Giorno Giovanna|{{Ch|Chapter 455}}}}
-|{{Q|Did I [drink Abbacchio's piss]...? Well, you all keep your abilities a secret, don't you?|v=GioSippinTea.wav|Giorno Giovanna|{{Ch|Chapter 456}}}}
-|{{Q|[Illuso] is already destined for defeat regardless! His exit gives me a better chance of survival.|Giorno Giovanna|{{Ch|Chapter 484}}}}
+|{{Q|You said there are two paths I could follow... but for you to have that many choices? Impossible!|Giorno Giovanna|{{Ch|Chapter 454}}}}
+|{{Q|So. You asserted that when someone is insulted, murder is permitted, correct?|Giorno Giovanna|{{Ch|Chapter 455}}}}
+|{{Q|Did I (drink abbachio's piss). Well, you all keep your abilities a secret, don't you?|Giorno Giovanna|{{Ch|Chapter 456}}}}
+|{{Q|Illuso is already destined for defeat regardless! His exit gives me a better chance of survival.|Giorno Giovanna|{{Ch|Chapter 484}}}}
 |{{Q|They will catch us in no time if we steal a single car. But, if we steal a hundred cars, then they might have a harder time figuring out which one we're on.|Giorno Giovanna|{{Ch|Chapter 502}}}}
-|{{Q|We have similarities. You and my Gold Experience. They both have the ability to create. You gave me a hint and pushed me within an inch of my life... And that's helped me grow a little!|Giorno Giovanna to Baby Face|{{Ch|Chapter 504}}}}
-|{{Q|This sensation! I don't exactly get it, but... My Gold Experience... I feel the birth of something new! I sense the birth of something newer and greater than before!!|Giorno Giovanna|{{Ch|Chapter 504}}}}
-|{{Q|I learned something... from your ability to turn humans into objects. Was it fate or some force that attracts similar Stands to each other...? People often learn more from their failures than from their successes and victories... Your ability to make people into objects... has allowed my Gold Experience to grow.|Giorno Giovanna to Baby Face|{{Ch|Chapter 505}}}}
+|{{Q|We have similarities. You and my Gold Experience. They both have the ability to create|Giorno Giovanna to Baby Face|{{Ch|Chapter 504}}}}
+|{{Q|This sensation! I don't exactly get it, but...|Giorno Giovanna|{{Ch|Chapter 504}}}}
+|{{Q|I learned something... from your ability to turn humans into objects.|Giorno Giovanna to Baby Face|{{Ch|Chapter 505}}}}
 |{{Q|You did things your own style, but it was useless either way...|Giorno Giovanna|{{Ch|Chapter 506}}}}
-|{{Q|Only those with resolve can clear a path through the darkness... things are getting exciting... If the worst comes to the worst, at least one of us will die in the process... but it is your responsibility, and our resolve shall clear the path!|Giorno Giovanna|{{Ch|Chapter 513}}}}
+|{{Q|Only those with resolve can clear a path through the darkness...|Giorno Giovanna|{{Ch|Chapter 513}}}}
 |{{Q|This is what resolve is! It is to carve out your destined path through the darkened wastes!|Giorno Giovanna|{{Ch|Chapter 514}}}}
-|{{Q|Mista...Your determination shines more radiantly than the morning sun. You've lit the path we must take forward...into our future!|Giorno Giovanna|{{Ch|Chapter 515}}}}
-|{{Q|The unconscious... Stand abilities are, in a sense, the unconscious talents of their Users. If any sense of guilt exists in your heart, then that will unconsciously put a brake on your ability. But this man delights in cruelty. It is his reason for living... that's why he has this ability. If he can do this, that means he has no brakes! There is no limit to his evil.|Giorno Giovanna|{{Ch|Chapter 558}}}}
-|{{Q|One more thing. About that theory of happiness you spewed... even as I look at you now, I feel no happiness at all, because victory was mine from the very beginning.|Giorno Giovanna|{{Ch|Chapter 561}}}}
-|{{Q|{{nihongo2|Know your place. Did you really think you deserve a happy ending? A person like you?|自分を知れ… そんなオイシイ話が………あると思うのか？ おまえの様な人間に|Jibun o shire... Sonna oishii hanashi ga... aru to omou no ka? Omae no yō na ningen ni}}|v=Giorno reply to Cioccolata's spare.wav|Giorno Giovanna to Cioccolata|{{Ch|Chapter 562}}}}
-|{{Q|We're leaving you here... I won't let anyone... hurt you anymore, I promise... but, I swear that I will bring you home.|Giorno Giovanna to Narancia|{{Ch|Chapter 577}}}}
-|{{Q|All that will survive is the reality of this world. Righteous actions born from reality will never be annihilated. Bucciarati is dead, and so are Abbacchio and Narancia. But, their actions and their wills have not been annihilated. They are the ones who gave me this Arrow. Now, are your actions born of reality? Or are they born of superficial evil? We're about to find out. In the end, will you be able to escape annihilation? Boss?|Giorno Giovanna to Diavolo|{{Ch|Chapter 586}}}}
+|{{Q|Mista...Your determination shines more radiantly than the morning sun|Giorno Giovanna|{{Ch|Chapter 515}}}}
+|{{Q|The unconscious... Stand abilities are, in a sense, the unconscious talents of their Users.|Giorno Giovanna|{{Ch|Chapter 558}}}}
+|{{Q|One more thing. About that theory of happiness you spewed, even as I look at you now, I feel no happiness at all, because victory was mine from the very beginning.|Giorno Giovanna|{{Ch|Chapter 561}}}}
+|{{Q|Know your place. Did you really think you deserve a happy ending? A person like you?|Giorno Giovanna to Cioccolata|{{Ch|Chapter 562}}}}
+|{{Q|We're leaving you here... I won't let anyone, hurt you anymore, I promise... but, I swear that I will bring you home.|Giorno Giovanna to Narancia|{{Ch|Chapter 577}}}}
+|{{Q|All that will survive is the reality of this world.|Giorno Giovanna to Diavolo|{{Ch|Chapter 586}}}}
 |{{Q|The ending is something that has no ending. That is Gold Experience Requiem.|Giorno Giovanna|{{Ch|Chapter 588}}}}
-|{{Q|That which we have inherited from the departed must be taken onwards! I will not destroy this Arrow!|Giorno Giovanna|{{Ch|Chapter 594}}}}
-|{{Q|It's not possible to save everyone. The choices you can make are infinite, and the world is too complex. Neither you nor I can know which choice is right and which is wrong. Whatever the terrible consequence that you get might be, the fact of choosing something and accepting its consequences is the most important thing. Maybe I'm the one being mistaken, but... We did choose the path of fight, and I'm not ashamed of it. I hope it's the same for you. I truly hope so.|Giorno Giovanna|[[Golden Heart, Golden Ring]]}}
-|{{Q|'You haven't betrayed anyone. Nobody ever let you. You don't trust anyone, so nobody ever trusted you. Your invincibility is useless. You may be strong, but there is no future in which you find yourself a purpose. Useless. Useless.|Giorno Giovanna to [[Cannolo Murolo]]|[[Purple Haze Feedback]]}}
-|{{Q|What do you say, [[Pannacotta Fugo]]? Will you lend me your talents again? I have a dream. And I need friends to help me with that dream."|Giorno Giovanna|[[Purple Haze Feedback]]}}
+|{{Q|That which we have inherited from the departed must be taken onwards!|Giorno Giovanna|{{Ch|Chapter 594}}}}
+|{{Q|It's not possible to save everyone. The choices you can make are infinite, and the world is too complex|Giorno Giovanna|[[Golden Heart, Golden Ring]]}}
+|{{Q|'You haven't betrayed anyone. Nobody ever let you. You don't trust anyone, so nobody ever trusted you.|Giorno Giovanna to [[Cannolo Murolo]]|[[Purple Haze Feedback]]}}
+|{{Q|What do you say, Pannacotta Fugo? Will you lend me your talents again?|Giorno Giovanna|[[Purple Haze Feedback]]}}
+|{{Q|How about it? I'm calling it a day and heading home anyway, so I'll give you a good deal.|Giorno Giovanna|{{Ch|Chapter 440}}}}
+|{{Q|I'll take you to the city for 8,000 yen. How about it?|Giorno Giovanna|{{Ch|Chapter 440}}}}
+|{{Q|When I have to repeat something that only needs to be said once, it means that the listener is unintelligent.|Giorno Giovanna|{{Ch|Chapter 440}}}}
+|{{Q|It's only trying to protect itself. It has its own life to protect...|Giorno Giovanna|{{Ch|Chapter 441}}}}
+|{{Q|Any attack directed towards it will be reflected back, resulting in death.|Giorno Giovanna|{{Ch|Chapter 441}}}}
+|{{Q|If you are prepared to kill someone, then that must mean that, in turn, you're prepared for the danger and possibility of being killed yourself...|Giorno Giovanna|{{Ch|Chapter 446}}}}
+|{{Q|I apologize, that was a lie.|Giorno Giovanna|{{Ch|Chapter 446}}}}
+|{{Q|I'm planning on defeating your Boss and taking over this city. In order to get rid of gangsters who sell drugs to children...|Giorno Giovanna|{{Ch|Chapter 447}}}}
+|{{Q|To take control of this city, I have to enter into the organization that is currently in control and work my way up...!|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Mudamudamudamudamudamudamuda !!!
+|{{Q|Take your time and enjoy sunbathing! That's the singular path that you can follow.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|I see, that is in fact a very important distinction. Because you insulted that innocent old man's life.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|And that's why I turned one of your pistols into a banana. It's your last meal; take your time... enjoy it.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|You gave me a hint and pushed me within an inch of my life... And that's helped me grow a little!|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|My Gold Experience... I feel the birth of something new!|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|I sense the birth of something newer and greater than before!!|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|People often learn more from their failures than from their successes and victories...|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Was it fate or some force that attracts similar Stands to each other...?|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Your ability to make people into objects... has allowed my Gold Experience to grow.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Things are getting exciting... If the worst comes to the worst, at least one of us will die in the process...|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|But it is your responsibility, and our resolve shall clear the path!|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|You've lit the path we must take forward...into our future!|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|If any sense of guilt exists in your heart, then that will unconsciously put a brake on your ability.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|But this man delights in cruelty. It is his reason for living... that's why he has this ability|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|If he can do this, that means he has no brakes! There is no limit to his evil|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Righteous actions born from reality will never be annihilated.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Bucciarati is dead, and so are Abbacchio and Narancia. But, their actions and their wills have not been annihilated.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|They are the ones who gave me this Arrow. Now, are your actions born of reality? Or are they born of superficial evil? We're about to find out.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|In the end, will you be able to escape annihilation? Boss?|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Neither you nor I can know which choice is right and which is wrong.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Whatever the terrible consequence that you get might be, the fact of choosing something and accepting its consequences is the most important thing.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Maybe I'm the one being mistaken, but... We did choose the path of fight, and I'm not ashamed of it|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|I hope it's the same for you. I truly hope so.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Your invincibility is useless. You may be strong, but there is no future in which you find yourself a purpose.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|Useless. Useless.|Giorno Giovanna|{{Ch|Chapter 448}}}}
+|{{Q|I have a dream. And I need friends to help me with that dream|Giorno Giovanna|{{Ch|Chapter 448}}}}
 }}
