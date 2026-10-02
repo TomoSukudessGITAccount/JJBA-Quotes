@@ -2,14 +2,46 @@
 {{Tabber
 |Part 5|
 {{Quotes|bg=VA|bg2=VA2
-|{{Q|Is this your idea of a joke, you little punk?! How many times do I have to teach you before you finally learn?! You said that 6 times 5 is 30, so why the hell would your answer be less than 30!? You shit-brained idiot!|Pannacotta Fugo|{{Ch|Chapter 456}}}}
+|{{Q|Is this your idea of a joke, you little punk?!|Pannacotta Fugo|{{Ch|Chapter 456}}}}
+|{{Q|How many times do I have to teach you before you finally learn?!|Pannacotta Fugo|{{Ch|Chapter 456}}}}
+|{{Q|You said that 6 times 5 is 30, so why the hell would your answer be less than 30!? You shit-brained idiot!|Pannacotta Fugo|{{Ch|Chapter 456}}}}
 |{{Q|I'd like to order this man some spaghetti, if you don't mind!|Pannacotta Fugo|{{Ch|Chapter 472}}}}
 |{{Q|You'll be the one dying... once you've witnessed my Stand!|Pannacotta Fugo|{{Ch|Chapter 479}}}}
-|{{Q|I'm sorry, but none of us will board that boat. You aren't facing the facts. Nobody can survive in this world on ideals alone. We can't live without the gang.|Pannacotta Fugo|{{Ch|Chapter 523}}}}
-|{{Q|This is madness! What are they thinking!? All for a girl we met two days ago! A girl we've never even really talked to! She's nobody to us! We don't even know what kind of music Trish likes!|Pannacotta Fugo seething|{{Ch|Chapter 523}}}}
-}}
-|Purple Haze Feedback|
-{{Quotes|bg=PHF|bg2=PHF2
-|{{Q|As long as I live, I serve your dream. Please accept my body, my heart and my soul. That is my hope, and that is my future. I am yours. Our [[Giorno Giovanna|GioGio]]...|Pannacotta Fugo|[[Purple Haze Feedback]]}}
-}}
+|{{Q|I'm sorry, but none of us will board that boat. 
+|{{Q|You aren't facing the facts. Nobody can survive in this world on ideals alone.|Pannacotta Fugo seething|{{Ch|Chapter 523}}}}
+|{{Q|We can't live without the gang.|Pannacotta Fugo|{{Ch|Chapter 523}}}}
+|{{Q|This is madness! What are they thinking!? All for a girl we met two days ago!|Pannacotta Fugo seething|{{Ch|Chapter 523}}}}
+|{{Q|A girl we've never even really talked to! She's nobody to us!|Pannacotta Fugo seething|{{Ch|Chapter 523}}}}
+|{{Q|We don't even know what kind of music Trish likes!|Pannacotta Fugo seething|{{Ch|Chapter 523}}}}
+|{{Q|As long as I live, I serve your dream.|Pannacotta Fugo|[[Purple Haze Feedback]]}}
+|{{Q|Please accept my body, my heart and my soul.|Pannacotta Fugo|[[Purple Haze Feedback]]}}
+|{{Q|That is my hope, and that is my future. I am yours. Our GioGio...|Pannacotta Fugo|[[Purple Haze Feedback]]}}
+|{{Q|You have my utmost respect!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|You stupid delinquent! Are you messing with me!?|Pannacotta Fugo|{{Ch|Chapter 456}}}}
+|{{Q|How many times do I have to teach you this before you learn?!|Pannacotta Fugo|{{Ch|Chapter 456}}}}
+|{{Q|You just said six times five was thirty, so why the hell is your answer even less?!|Pannacotta Fugo|{{Ch|Chapter 456}}}}
+|{{Q|You...|Pannacotta Fugo|{{Ch|Chapter 456}}}}
+|{{Q|SHIT-FOR-BRAINS!!|Pannacotta Fugo|{{Ch|Chapter 456}}}}
+|{{Q|I've got no choice. There's no going back now!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|What?! How can this be?!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|You! Who do you think you are?!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|You messing with me, punk?! Guess I'll have to beat you till you finally get it!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Take off my jacket? Here? Uh... but why?|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|A Stand that ages everyone in its radius? Your power's as nasty as mine|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Well, then let's just see. Are you sure you can stop Purple Haze?|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Boss... You're going down!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Nice try, but you'll never best me.|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Who are you?! Who do you think you are?!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Giorno... I'm sorry|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|I was so determined to follow you... Why didn't I board the boat...?|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Mista... forgive me.|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|You're really something. Just do as you were taught, and you can make it happen.|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|She's using someone's jacket as a handkerchief... How rude!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Purple Haze's virus is already multiplying throughout your body!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Tell me, did you stop it? After getting infected?|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|That's for calling me brazen!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Your hair looks wretched!|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|Attack like a explosion, and retreat like a storm|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|This is getting crazy|Pannacotta Fugo|[[All Star Battle]]}}
+|{{Q|My mind is clear up! You can bet that!|Pannacotta Fugo|[[All Star Battle]]}}
 }}
