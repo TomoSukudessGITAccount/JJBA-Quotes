@@ -1,0 +1,56 @@
+name: Build JoJo Quote Database
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+    paths:
+      - "sources/**"
+      - "extract_quotes.py"
+
+permissions:
+  contents: write
+
+jobs:
+  build-database:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Gerar banco completo
+        run: python extract_quotes.py
+
+      - name: Mostrar resultado
+        run: |
+          echo "Número de quotes:"
+          wc -l "jojo-quotes-all.csv"
+
+          echo ""
+          echo "Primeiras quotes:"
+          head -n 5 "jojo-quotes-all.csv"
+
+      - name: Salvar banco atualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add "jojo-quotes-all.csv"
+
+          if git diff --cached --quiet; then
+            echo "Banco já estava atualizado."
+          else
+            git commit -m "Update complete JoJo quote database"
+            git push
+          fi
