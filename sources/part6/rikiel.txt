@@ -21,7 +21,7 @@
 |{{Q|Rikiel is a decently-built man with a long face. He has dark hair styled into locs|Rikiel's Appearance|{{Ap|Appearance}}}}
 |{{Q|He wears a hooded, sleeveless cow-print bodysuit with an opening on his chest, similarly to the suit of his brother, Giorno Giovanna. He wears an assortment of arm warmers with the same cow-print pattern.|Rikiel's Appearance|{{Ap|Appearance}}}}
 |{{Q|Along with his brothers, Rikiel inherits the star-shaped birthmark from his father, which is behind his left shoulder.|Rikiel's Appearance|{{Ap|Appearance}}}}
-|{{Q|Sky High allows Rikiel to control creatures known as flying rods which absorb body heat and create localized illnesses.|about Rikiel's Stand|{{St|SO Stand}}}}
+|{{Q|Sky High (or Sky Guy) allows Rikiel to control creatures known as flying rods which absorb body heat and create localized illnesses.|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
 |{{Q|Although Rikiel is said to be retired in SO Chapter 117, his JoJo Glossary entries in All-Star Battle, Eyes of Heaven, and All-Star Battle R state that he was killed by Ermes|Notes about Rikiel|{{Nt|SO Notes}}}}
 |{{Q|His voice actor in the Latin Spanish dub, Luis Fernando Orozco, previously voiced the protagonist of Diamond is Unbreakable, Josuke Higashikata.|Rikiel's Trivia|{{Trv|SO Trivia}}}}
 |{{Q|Initially a meek youth tormented by bizarre physical afflictions and severe anxiety, Rikiel lives without hope and easily breaks down under pressure.|about Rikiel's personality|{{Per|Rikiel Personality}}}}
@@ -31,4 +31,29 @@
 |{{Q|Driven by immense loyalty and gratitude toward Pucci, he battles to the very end to repay his debt|about Rikiel's personality|{{Per|Rikiel Personality}}}}
 |{{Q|Ultimately facing defeat with honor, accepting his loss gracefully, and acknowledging his opponent's kindness while remaining steadfast in his belief in Pucci's vision of predestination.|about Rikiel's personality|{{Per|Rikiel Personality}}}}
 |{{Q|I'm Apollo 11!|Rikiel|{{Ch|SO Chapter 116}}}}
+|{{Q|The two sides of Rikiel|about Rikiel|Wk|SO Wiki}}}}
+|{{Q|Rikiel's name was based on Sonia Rykiel, a French fashion designer.|about Rikiel|Wk|SO Wiki}}}}
+|{{Q|Rikiel is approximately 23 to 24 years old (during the events of Stone Ocean). But he was born in the year 1988|about Rikiel|Wk|SO Wiki}}}}
+|{{Q|Rikiel's nationality is American despite his father being British.|about Rikiel|Wk|SO Wiki}}}}
+Rikiel's family consists of: DIO (Father) (via Jonathan's body), Giorno Giovanna (Half-brother), Donatello Versus (Half-brother), Ungalo (Half-brother).
+|{{Q|Rikiel is defeated by Ermes after revealing the relationship between Weather and Pucci. being retired or dead (probably)|about Rikiel|Wk|SO Wiki}}}}
+|{{Q|Rikiel appears in All Star Battle as an NPC, and in Jumputi Heroes as a playable character. His first appearance in games was in JJBA: All Star Battle.|about Rikiel|Wk|SO Wiki}}}}
+|{{Q|Rikiel made his first appearance in chapter 103 of the SO manga, but only briefly, his full appearance was in chapter 111 and first named in chapter 112. While his last appearance was in chapter 117.|about Rikiel|Wk|SO Wiki}}}}
+|{{Q|Rikiel's first appearance in the anime was in episode 25 of SO.|about Rikiel|Wk|SO Wiki}}}}
+|{{Q|This character may sometimes be referred to as "Rykiel".|about Rikiel|Wk|SO Wiki}}}}
+|{{Q|Rikiel's stand is named after the song "Sky High" by Jigsaw (although this quote has not yet been confirmed by the author).|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|Rikiel was born with his stand, but it was only activated upon meeting Pucci. Being awakened on March 18, 2012|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|It must be one of those 'rods'...! It's only been seen in video footage, and a live or dead specimen has never been found... It's because they melt immediately after they die... Is his ability to control these 'rods'?|Emporio Alnino to Sky High|{{St|SO Stands}}}}
+|{{Q|Rikiel's Stand, Sky High, made its appearance in chapter 112 in SO manga; in the anime, its appearance was in episode 27 of Fifth season|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|Sky High grants Stamina level C and Range level B. Its range only reaches the user's eye level. The other statuses are nonexistent since the Stand depends on the Rods.|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|Sky High (スカイ・ハイ, Sukai Hai) is the Stand of Rikiel, featured in Stone Ocean. Attached to the wrist of Rikiel.|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|Sky High is Attached to the wrist of Rikiel, it allows him to control a colony of "rods", cryptids that can fly and suck the body heat of people.|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|Although it is never actually manifested in the manga, the page giving data on it and the rods depict the Stand as a small creature that sits on Rikiel's wrist.|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|Sky High takes the form of a four-legged creature with long three-toed feet, and a long main body.|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|The main body of Sky High has very few features, with its only distinct features being two reflective plates, eyes, and a proboscis-type mouth.|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|Sky High also displays a second head, which protrudes out from the top of the first head. This second head is smaller, with a look similar to that of a pteranodon|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|Sky High functions as a tool that allows Rikiel to control a hidden species of creatures known as Rods. While normally small and virtually invisible (except while being recorded), a large group of Rods under Rikiel's control can act as his own army of attack dogs.|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|Rikiel uses Sky High to control the Rods.|Rikiel|{{Wk|SO Wiki}}}}
+|{{Q|The Rods causes various afflictions (e.g. a twisted ankle) by stealing one's body heat|about Rikiel's Stand, Sky High|{{St|SO Stands}}}}
+|{{Q|The idea for a Stand based around Rods came from a TV show Araki had seen discussing them, though the name of the show is unknown|Rikiel's Trivia|{{Trv|SO Trivia}}}}
 }}
